@@ -4,7 +4,9 @@
   <body data-ng-controller="FilterController">
     <input data-ng-model="name"/>
     <ul>
-      <li data-ng-repeat="customer in customers | filter:name | orderBy:customer.name">{{customer.name}} {{customer.city}}</li>
+      <li data-ng-repeat="customer in customers | 
+                          filter:name | orderBy:customer.name
+                          | limitTo: 3">{{customer.name}} {{customer.city}}</li>
     </ul>
     <br/>
     Customer Name: <br />
